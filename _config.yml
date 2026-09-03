@@ -39,6 +39,11 @@ collections:
   - news
   - showcase
 
-# Nested clone of the old debug site; not part of this site
+# Setting `exclude` replaces Jekyll's defaults, so they are listed again here.
+# vendor/ matters on CI, where bundler installs gems into vendor/bundle.
 exclude:
-  - xiyue-website-debug
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - xiyue-website-debug   # nested clone of the old debug site; not part of this site
