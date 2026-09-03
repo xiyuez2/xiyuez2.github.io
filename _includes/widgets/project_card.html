@@ -3,6 +3,7 @@ One project / experience card. Expects `item`, a document from the _showcase col
   title, subtitle, venue (accepted venue, shown as a badge next to the title), cover, caption,
   tags (filter topics, must be listed in projects.filter_tags in _data/display.yml),
   keywords (free-form, shown but not clickable),
+  authors (paper author list in order, rendered via widgets/author_list.html),
   paper / project_page / code (the only link kinds; omit any that do not exist), note;
   body = markdown bullet list.
 {%- endcomment -%}
@@ -24,6 +25,9 @@ One project / experience card. Expects `item`, a document from the _showcase col
         </h5>
         {%- if item.subtitle %}
         <p class="small text-muted mb-2">{{ item.subtitle }}</p>
+        {%- endif %}
+        {%- if item.authors %}
+        <p class="small text-muted mb-2 project-authors">{% include widgets/author_list.html authors=item.authors %}</p>
         {%- endif %}
         {%- if item.tags or item.keywords %}
         <p class="mb-2">

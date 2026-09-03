@@ -13,6 +13,16 @@ keywords:
   - Inverse problems
   - 3D representation
 paper: https://icml.cc/virtual/2025/poster/45130
+authors:
+  - Xiyue Zhu
+  - Dou Hoon Kwark
+  - Ruike Zhu
+  - Kaiwen Hong
+  - Yiqi Tao
+  - Shirui Luo
+  - Yudu Li
+  - Zhi-Pei Liang
+  - Volodymyr Kindratenko
 project_page: https://score-fusion.github.io/
 code: https://github.com/score-fusion/ScoreFusion
 show: true

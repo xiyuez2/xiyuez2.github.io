@@ -14,6 +14,17 @@ keywords:
   - Report generation
   - LLM-as-judge
 paper: https://aclanthology.org/2026.findings-acl.2139/
+authors:
+  - Weijie Liang
+  - Xiyue Zhu
+  - Ruike Zhu
+  - Chenhao Li
+  - Cheng Tang
+  - Zhiyu Liu
+  - Zhihua Gong
+  - Shirui Luo
+  - Yudu Li
+  - Volodymyr Kindratenko
 show: true
 width: 12
 date: 2026-01-02 00:01:00 -0500

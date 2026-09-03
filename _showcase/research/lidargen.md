@@ -11,6 +11,10 @@ keywords:
   - LiDAR generation
   - Score-based models
 paper: https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136830017.pdf
+authors:
+  - Vlas Zyrianov
+  - Xiyue Zhu
+  - Shenlong Wang
 project_page: https://www.zyrianov.org/lidargen/
 code: https://github.com/vzyrianov/lidargen
 show: true

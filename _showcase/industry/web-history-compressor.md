@@ -11,6 +11,11 @@ keywords:
   - Web agents
   - Context compression
 paper: https://aclanthology.org/2025.findings-acl.187/
+authors:
+  - Xiyue Zhu
+  - Peng Tang
+  - Haofu Liao
+  - Srikar Appalaraju
 show: true
 width: 12
 date: 2024-08-01 00:01:00 -0500
