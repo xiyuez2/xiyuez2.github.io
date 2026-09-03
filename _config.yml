@@ -38,3 +38,7 @@ collections:
   - publications
   - news
   - showcase
+
+# Nested clone of the old debug site; not part of this site
+exclude:
+  - xiyue-website-debug

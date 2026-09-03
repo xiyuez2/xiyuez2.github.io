@@ -8,3 +8,6 @@ vendor/
 Gemfile.lock
 
 .DS_Store
+
+# Nested clone of the old debug site (separate git repo)
+xiyue-website-debug/
