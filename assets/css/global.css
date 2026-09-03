@@ -97,6 +97,19 @@ div.lazy {
     cursor: pointer;
 }
 
+.project-filter .project-tag {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.45em 0.95em;
+    margin: 0.2rem 0.15rem;
+    display: inline-block;
+}
+
+.project-filter .project-filter-label {
+    font-size: 0.95rem;
+    margin-right: 0.35rem;
+}
+
 .project-tag-count {
     opacity: 0.6;
 }

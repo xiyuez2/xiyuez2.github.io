@@ -16,7 +16,7 @@ The filter bar shows exactly `projects.filter_tags` from _data/display.yml, in t
     {%- if include.title %}
     <h6 class="mb-2">{{ include.title }}</h6>
     {%- endif %}
-    <span class="small text-muted mr-1"><i class="fas fa-filter"></i> Filter by topic:</span>
+    <span class="project-filter-label text-muted"><i class="fas fa-filter"></i> Filter by topic:</span>
     <a href="#" class="badge badge-pill badge-dark border project-tag active" data-tag="">All <span class="project-tag-count">{{ cards | size }}</span></a>
     {%- for tag in filter_tags %}
     {%- assign count = 0 -%}
