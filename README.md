@@ -13,7 +13,7 @@ Built on [luost26/academic-homepage](https://github.com/luost26/academic-homepag
 ## Deploy on GitHub Pages
 1. Create a **new empty repo** named `xiyuez2.github.io`.
 2. Push this folder to its `main` branch.
-3. Settings → Pages → Build and deployment → Source: **Deploy from a branch**, branch `main` / root.
+3. Settings → Pages → Build and deployment → Source: **GitHub Actions** (the workflow in `.github/workflows/jekyll.yml` builds with the `jekyll-email-protect` plugin, which the default branch build does not support).
 4. Live at https://xiyuez2.github.io/ after a minute or two.
 
 Local preview: install Ruby + Bundler, then `bundle install && bundle exec jekyll serve`.
