@@ -1,6 +1,6 @@
 ---
 title: "MapPrior: Bird's-Eye View Map Layout Estimation with Generative Models"
-subtitle: "UIUC · First author · Jul 2022 – Aug 2023"
+subtitle: "UIUC · Jul 2022 – Aug 2023"
 venue: "ICCV 2023"
 cover: /assets/images/covers/mapprior.png
 caption: "An off-the-shelf perception model gives a noisy estimate; a generative encoder, transformer sampler, and decoder turn it into realistic, diverse map layouts."

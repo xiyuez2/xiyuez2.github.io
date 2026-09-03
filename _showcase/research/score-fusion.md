@@ -1,6 +1,6 @@
 ---
 title: "Introducing 3D Representation for Volume-to-Volume Translation via Score Fusion"
-subtitle: "UIUC · First author · Nov 2023 – Feb 2025"
+subtitle: "UIUC · Nov 2023 – Feb 2025"
 venue: "ICML 2025"
 cover: /assets/images/covers/score-fusion.png
 caption: "At each denoising step, perpendicularly trained 2D diffusion models give initial estimates and a lightweight 3D network learns to fuse them in score space; alignment modules inject hierarchical 2D features."

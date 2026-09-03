@@ -1,6 +1,6 @@
 ---
 title: "MedQPA-Gen: Medical Question Proposing and Answering for Report Generation"
-subtitle: "UIUC · Co-first author · Jun 2025 – Jan 2026"
+subtitle: "UIUC · Jun 2025 – Jan 2026"
 venue: "ACL 2026 Findings"
 cover: /assets/images/covers/medqpa-gen.png
 caption: "Figure 2 of the paper: the MedQPA evaluation loop (question proposing and answering), reflective prompting, and the RL update against the MedQPA reward model."
@@ -15,8 +15,8 @@ keywords:
   - LLM-as-judge
 paper: https://aclanthology.org/2026.findings-acl.2139/
 authors:
-  - Weijie Liang
-  - Xiyue Zhu
+  - Weijie Liang*
+  - Xiyue Zhu*#
   - Ruike Zhu
   - Chenhao Li
   - Cheng Tang
