@@ -1,0 +1,74 @@
+{%- comment -%}
+Education / Experience / Awards card. Each education or experience entry in _data/profile.yml may have:
+  name, logo, dept, position, date, advisor (education only; HTML allowed). Every field gets its own line.
+{%- endcomment -%}
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <div class="row">
+                    {% if site.data.profile.education %}
+                    <div class="col-lg-6">
+                        <div class="mx-2 my-1">
+                            <h5 class="mb-3">Education</h5>
+                            <ul class="list-unstyled mb-1">
+                                {% for item in site.data.profile.education %}
+                                <li class="media mb-3">
+                                    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" class="mr-2 mt-1 affiliation-logo">
+                                    <div class="media-body">
+                                        <div class="font-weight-bold">{{ item.name }}</div>
+                                        {% if item.dept %}<div>{{ item.dept }}</div>{% endif %}
+                                        <div>{{ item.position }}</div>
+                                        <div class="text-muted"><em>{{ item.date }}</em></div>
+                                        {% if item.advisor %}<div class="text-muted">Advisor: {{ item.advisor }}</div>{% endif %}
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.experience %}
+                    <div class="col-lg-6">
+                        <div class="mx-2 my-1">
+                            <h5 class="mb-3">Experience</h5>
+                            <ul class="list-unstyled mb-1">
+                                {% for item in site.data.profile.experience %}
+                                <li class="media mb-3">
+                                    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" class="mr-2 mt-1 affiliation-logo">
+                                    <div class="media-body">
+                                        <div class="font-weight-bold">{{ item.name }}</div>
+                                        {% if item.dept %}<div>{{ item.dept }}</div>{% endif %}
+                                        <div>{{ item.position }}</div>
+                                        <div class="text-muted"><em>{{ item.date }}</em></div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.awards %}
+                    <div class="col-lg-6">
+                        <div class="mx-2 my-1">
+                            <h5 class="mb-3">Honors &amp; Awards</h5>
+                            <ul class="list pl-3 mb-1">
+                                {% for item in site.data.profile.awards %}
+                                <li>
+                                    <div class="d-flex">
+                                        <div>{{ item.name }}</div>
+                                        <div class="ml-auto mt-auto no-break text-muted"><em>{{ item.date }}</em></div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

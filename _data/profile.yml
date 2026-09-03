@@ -1,0 +1,80 @@
+primary_name: "Xiyue Zhu"
+secondary_name: ""
+navbar_name: "Xiyue Zhu"
+
+positions:
+- name: Ph.D. Student, Computer Engineering
+- name: University of Illinois Urbana-Champaign
+  logo: /assets/images/badges/badge_uiuc.svg
+
+email: "xiyuez2@illinois.edu"
+# cv_link: /assets/files/cv.pdf   # add a PDF and uncomment to show a CV link
+gscholar: PGy1mMsAAAAJ
+github: xiyuez2
+linkedin: xiyue-zhu-503b34292
+# twitter:
+# orcid:
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    Hi! I'm a final-year Ph.D. candidate in Computer Engineering at the University of Illinois Urbana-Champaign (UIUC),
+    advised by <a href="https://ece.illinois.edu/about/directory/faculty/kindrtnk" target="_blank">Prof. Volodymyr Kindratenko</a>.
+    Before that, I received my M.S. from UIUC, advised by
+    <a href="https://shenlong.web.illinois.edu/" target="_blank">Prof. Shenlong Wang</a>, where I worked on
+    generative models for autonomous driving, and my bachelor's degrees from the ZJU-UIUC Institute.
+  </p>
+  <p>
+    My research centers on <strong>large language and vision-language models</strong>, in particular
+    <strong>reinforcement learning–based post-training</strong> and <strong>AI agents</strong>. I also have
+    substantial experience with <strong>visual generative models</strong> such as diffusion and video generation.
+    Across these areas, I am especially interested in turning imperfect feedback, such as online user signals,
+    LLM judgments, and visual quality metrics, into reliable training rewards for open-ended tasks. My work spans
+    applications in e-commerce search, web automation, medical report generation, and video creation, as well as
+    generative models for autonomous driving earlier in my PhD. I regularly serve as a reviewer for CVPR, ECCV,
+    and NeurIPS.
+  </p>
+  <p>
+    <strong>I am graduating in December 2026 and looking for full-time positions in VLMs, AI agents, and video
+    generation. Feel free to reach out!</strong> The cards below cover my research and industry projects; click a
+    topic tag to filter them.
+  </p>
+
+
+portrait_url: /assets/images/photos/portrait.jpg
+# portrait_caption: >-
+#   optional caption
+
+education:
+- name: University of Illinois Urbana-Champaign
+  logo: /assets/images/badges/badge_uiuc.svg
+  position: Ph.D. in Computer Engineering
+  advisor: <a href="https://ece.illinois.edu/about/directory/faculty/kindrtnk" target="_blank">Prof. Volodymyr Kindratenko</a>
+  date: Aug. 2021 - Dec. 2026 (expected)
+- name: University of Illinois Urbana-Champaign
+  logo: /assets/images/badges/badge_uiuc.svg
+  position: M.S. in Computer Engineering
+  advisor: <a href="https://shenlong.web.illinois.edu/" target="_blank">Prof. Shenlong Wang</a>
+  date: Aug. 2021 - May 2023
+- name: Zhejiang University & UIUC (ZJU-UIUC Institute)
+  logo: /assets/images/badges/badge_zju.png
+  position: B.Eng. (ZJU) & B.Sc. (UIUC) in Computer Engineering, dual-degree program
+  date: Aug. 2017 - May 2021
+
+experience:
+- name: TikTok
+  logo: /assets/images/badges/badge_tiktok.png
+  position: Machine Learning Engineer Intern
+  date: May 2026 - Aug. 2026
+- name: Xpeng Motors
+  logo: /assets/images/badges/badge_xpeng.svg
+  position: Machine Learning Intern
+  date: May 2025 - Jan. 2026
+- name: Amazon
+  logo: /assets/images/badges/badge_amazon.svg
+  position: Applied Scientist Intern
+  date: May 2024 - Aug. 2024
+
+# awards:
+# - name: Award name
+#   date: 2026

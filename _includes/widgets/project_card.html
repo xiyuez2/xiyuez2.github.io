@@ -1,0 +1,64 @@
+{%- comment -%}
+One project / experience card. Expects `item`, a document from the _showcase collection with:
+  title, subtitle, venue (accepted venue, shown as a badge next to the title), cover, caption,
+  tags (filter topics, must be listed in projects.filter_tags in _data/display.yml),
+  keywords (free-form, shown but not clickable),
+  paper / project_page / code (the only link kinds; omit any that do not exist), note;
+  body = markdown bullet list.
+{%- endcomment -%}
+{%- assign item = include.item -%}
+{%- assign filter_tags = site.data.display.projects.filter_tags -%}
+<div class="card border-0 shadow-sm bg-white project-card-inner">
+  <div class="row no-gutters">
+    {%- if item.cover %}
+    <div class="col-md-4 d-flex align-items-center p-3 pr-md-0">
+        <img src="{{ item.cover | relative_url }}" class="w-100 rounded project-cover" alt="{{ item.title | escape }}">
+    </div>
+    {%- endif %}
+    <div class="{% if item.cover %}col-md-8{% else %}col-12{% endif %} card-body">
+        <h5 class="card-title mb-1">
+            {{ item.title }}
+            {%- if item.venue %}
+            <span class="badge badge-primary project-venue" title="Accepted at {{ item.venue | escape }}">{{ item.venue }}</span>
+            {%- endif %}
+        </h5>
+        {%- if item.subtitle %}
+        <p class="small text-muted mb-2">{{ item.subtitle }}</p>
+        {%- endif %}
+        {%- if item.tags or item.keywords %}
+        <p class="mb-2">
+            {%- for tag in item.tags %}
+            {%- if filter_tags contains tag %}
+            <a href="#tag={{ tag | slugify }}" class="badge badge-pill badge-light border project-tag" data-tag="{{ tag | slugify }}" title="Show only: {{ tag | escape }}">{{ tag | escape }}</a>
+            {%- else %}
+            <span class="badge badge-pill project-keyword" title="Not a filter topic (see projects.filter_tags in _data/display.yml)">{{ tag | escape }}</span>
+            {%- endif %}
+            {%- endfor %}
+            {%- for keyword in item.keywords %}
+            <span class="badge badge-pill project-keyword">{{ keyword | escape }}</span>
+            {%- endfor %}
+        </p>
+        {%- endif %}
+        {%- if item.caption %}
+        <p class="small text-muted mb-2"><em>{{ item.caption }}</em></p>
+        {%- endif %}
+        <div class="small project-body mb-2">{{ item.content }}</div>
+        {%- if item.paper or item.project_page or item.code or item.note %}
+        <p class="small mb-0 project-links">
+            {%- if item.paper %}
+            <a target="_blank" href="{{ item.paper }}"><i class="fas fa-file-alt"></i> Paper</a>
+            {%- endif %}
+            {%- if item.project_page %}
+            <a target="_blank" href="{{ item.project_page }}"><i class="fas fa-globe"></i> Project page</a>
+            {%- endif %}
+            {%- if item.code %}
+            <a target="_blank" href="{{ item.code }}"><i class="fab fa-github"></i> Code</a>
+            {%- endif %}
+            {%- if item.note %}
+            <span class="text-muted">{{ item.note }}</span>
+            {%- endif %}
+        </p>
+        {%- endif %}
+    </div>
+  </div>
+</div>

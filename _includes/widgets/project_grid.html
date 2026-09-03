@@ -1,0 +1,60 @@
+{%- comment -%}
+Tag filter bar + one Masonry grid per group for every _showcase item with `show: true`.
+Parameters:
+  title          optional heading rendered above the filter bar (e.g. "Experience & Projects")
+  group_heading  HTML tag used for the group headings (default "h1")
+  heading_class  extra classes for the group headings
+The filter bar shows exactly `projects.filter_tags` from _data/display.yml, in that order; a card's
+`tags:` entries outside that list are not filterable. Clicking a tag filters the cards
+(assets/js/project_filter.js).
+{%- endcomment -%}
+{%- assign cards = site.showcase | where: "show", true | sort: "date" | reverse -%}
+{%- assign group_heading = include.group_heading | default: "h1" -%}
+{%- assign filter_tags = site.data.display.projects.filter_tags -%}
+
+<div id="project-filter" class="project-filter my-3 p-3 bg-white shadow-sm rounded-xl">
+    {%- if include.title %}
+    <h6 class="mb-2">{{ include.title }}</h6>
+    {%- endif %}
+    <span class="small text-muted mr-1"><i class="fas fa-filter"></i> Filter by topic:</span>
+    <a href="#" class="badge badge-pill badge-dark border project-tag active" data-tag="">All <span class="project-tag-count">{{ cards | size }}</span></a>
+    {%- for tag in filter_tags %}
+    {%- assign count = 0 -%}
+    {%- for item in cards -%}
+        {%- if item.tags contains tag -%}{%- assign count = count | plus: 1 -%}{%- endif -%}
+    {%- endfor %}
+    <a href="#tag={{ tag | slugify }}" class="badge badge-pill badge-light border project-tag" data-tag="{{ tag | slugify }}">{{ tag | escape }} <span class="project-tag-count">{{ count }}</span></a>
+    {%- endfor %}
+</div>
+
+{%- assign cards_by_group = cards | group_by_exp: "item", "item.group" -%}
+{%- for group in cards_by_group %}
+<div class="project-group" data-group="{{ group.name | slugify }}">
+    <{{ group_heading }} class="project-group-heading {{ include.heading_class }}">{{ group.name }}</{{ group_heading }}>
+    <div class="row grid mb-4">
+        <div class="grid-sizer col-1"></div>
+        {%- for item in group.items %}
+        {%- if item.width >= 6 -%}
+            {%- assign width_sm = 12 -%}
+            {%- assign width_xs = 12 -%}
+        {%- elsif item.width >= 2 -%}
+            {%- assign width_sm = 6 -%}
+            {%- assign width_xs = 6 -%}
+        {%- else -%}
+            {%- assign width_sm = item.width | times: 2 | at_most: 12 -%}
+            {%- assign width_xs = item.width | times: 2 | at_most: 12 -%}
+        {%- endif -%}
+        {%- assign tag_slugs = "" -%}
+        {%- for tag in item.tags -%}
+            {%- if filter_tags contains tag -%}
+                {%- assign slug = tag | slugify -%}
+                {%- assign tag_slugs = tag_slugs | append: slug | append: " " -%}
+            {%- endif -%}
+        {%- endfor %}
+        <div class="p-2 grid-item project-card col-md-{{ item.width | at_most: 12 }} col-sm-{{ width_sm }} col-{{ width_xs }}" data-tags="{{ tag_slugs | strip }}">
+            {% include widgets/project_card.html item=item %}
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endfor %}
