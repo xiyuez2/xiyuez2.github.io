@@ -1,0 +1,53 @@
+{%- comment -%}
+Search-engine and social-card metadata, included from _layouts/default.html.
+  title  the computed <title> text
+Per-page `description:` front matter overrides profile.site_description.
+{%- endcomment -%}
+{%- assign p = site.data.profile -%}
+{%- assign desc = page.description | default: p.site_description | strip_newlines | normalize_whitespace | strip -%}
+{%- assign canonical = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign is_home = false -%}{%- if page.url == "/" or page.url == "/index.html" -%}{%- assign is_home = true -%}{%- endif %}
+<meta name="description" content="{{ desc | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:type" content="{% if is_home %}profile{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ p.primary_name | escape }}">
+<meta property="og:title" content="{{ include.title | escape }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ p.portrait_url | absolute_url }}">
+<meta name="twitter:card" content="summary">
+{%- if p.google_site_verification %}
+<meta name="google-site-verification" content="{{ p.google_site_verification }}">
+{%- endif %}
+{%- if is_home %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ p.primary_name | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "image": {{ p.portrait_url | absolute_url | jsonify }},
+  "jobTitle": "Ph.D. Candidate in Computer Engineering",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Illinois Urbana-Champaign",
+    "url": "https://illinois.edu/"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Illinois Urbana-Champaign" },
+    { "@type": "CollegeOrUniversity", "name": "Zhejiang University" }
+  ],
+  "knowsAbout": ["Large language models", "Vision-language models", "Reinforcement learning post-training", "AI agents", "Diffusion models", "Video generation", "Autonomous driving"],
+  "sameAs": [
+    {%- capture same_as -%}
+      {%- if p.gscholar %}"https://scholar.google.com/citations?user={{ p.gscholar }}",{% endif -%}
+      {%- if p.github %}"https://github.com/{{ p.github }}",{% endif -%}
+      {%- if p.linkedin %}"https://www.linkedin.com/in/{{ p.linkedin }}",{% endif -%}
+      {%- if p.orcid %}"https://orcid.org/{{ p.orcid }}",{% endif -%}
+      {%- for u in p.same_as %}{{ u | jsonify }},{% endfor -%}
+    {%- endcapture -%}
+    {{ same_as | strip | split: "," | join: ", " }}
+  ]
+}
+</script>
+{%- endif %}

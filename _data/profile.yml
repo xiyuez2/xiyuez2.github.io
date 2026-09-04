@@ -13,7 +13,18 @@ gscholar: PGy1mMsAAAAJ
 github: xiyuez2
 linkedin: xiyue-zhu-503b34292
 # twitter:
-# orcid:
+orcid: 0000-0002-1427-8316
+
+# Used for <meta name="description">, social cards and the Person structured data on the homepage.
+site_description: >-
+  Xiyue Zhu is a Ph.D. candidate in Computer Engineering at the University of Illinois Urbana-Champaign
+  working on large language and vision-language models, reinforcement-learning post-training, AI agents,
+  and visual generative models such as diffusion and video generation.
+# Google Search Console -> Settings -> Ownership verification -> HTML tag: paste the `content` value here.
+# google_site_verification: ""
+# Extra profile URLs for the Person structured data (sameAs); scholar/github/linkedin/orcid above are added automatically.
+same_as:
+  - https://ece.illinois.edu/about/directory/grad-students/xiyuez2
 
 short_bio_text_justify: false
 short_bio: >-
